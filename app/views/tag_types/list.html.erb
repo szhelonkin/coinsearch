@@ -1,2 +1,25 @@
-<h1>TagTypes#list</h1>
-<p>Find me in app/views/tag_types/list.html.erb</p>
+<h1>Tag types list</h1>
+<table>
+
+<thead>
+<tr>
+<th>Id</ih>
+<th>Name</th>
+</tr>
+</thead>
+
+<tbody>
+<% @tag_types.each do |tag_type| %>
+<tr>
+<td><%= link_to tag_type.id, {:action => 'edit', :id => tag_type.id} %></td>
+<td><%= tag_type.name %></td>
+</tr>
+<% end %>
+</tbody>
+
+</table>
+
+<br>
+
+<%= link_to "New tag type", new_tag_type_path %>
+

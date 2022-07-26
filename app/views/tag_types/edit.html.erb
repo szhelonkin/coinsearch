@@ -1,0 +1,12 @@
+<h1>Edit tag type</h1>
+
+<%= form_for @tag_type, :url =>{:action => "update", :id =>@tag_type} do |f| %>
+
+<p>Name: <%= f.text_field 'name' %></p>
+
+<%= f.submit "Save changes" %>
+<% end %>
+
+<%= link_to 'Back', {:action => 'list'} %>
+
+
