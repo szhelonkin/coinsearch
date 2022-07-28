@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'tags/list'
   get 'coins/index'
   get 'tag_types/list'
   root "coins#index"
@@ -7,4 +8,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :tag_types
+  resources :tags
 end

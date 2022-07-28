@@ -2,12 +2,15 @@
 <h2>Edit tag type</h2>
 
 <%= form_for @tag_type, :url =>{:action => "update", :id =>@tag_type} do |f| %>
-
-<p>Name: <%= f.text_field 'name' %></p>
-
-<%= f.submit "Save changes" %>
+<div class="input-group mb-3">
+<span class="input-group-text">Name</span>
+<%= f.text_field 'name', class: "form-control" %>
+</div>
+<div class="btn-group">
+<%= f.submit "Save changes", class: "btn btn-success" %>
+<%= link_to 'Back', {:action => 'list'}, class: "btn btn-secondary" %>
+</div>
 <% end %>
 
-<%= link_to 'Back', {:action => 'list'} %>
 
 </div>

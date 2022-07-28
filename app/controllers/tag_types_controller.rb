@@ -28,7 +28,7 @@ class TagTypesController < ApplicationController
   def update
     @tag_type = TagType.find(params[:id])
     if @tag_type.update(params.require(:tag_type).permit(:name))
-       redirect_to :action => 'show', :id => @tag_type
+       redirect_to :action => 'list'
     else
       render :action => 'edit'
     end
