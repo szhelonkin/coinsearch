@@ -1,4 +1,28 @@
 <div class="container">
 <h2>Tags list</h2>
 <p>You can edit tag or add new one.</p>
+<table class="table table-striped">
+
+<thead>
+<tr>
+<th>Id</ih>
+<th>Name</th>
+</tr>
+</thead>
+
+<tbody>
+<% @tags.each do |tag| %>
+<tr>
+<td><%= link_to tag.id, {:action => 'edit', :id => tag.id} %></td>
+<td><%= tag.name %></td>
+</tr>
+<% end %>
+</tbody>
+
+</table>
+
+<br>
+
+<%= link_to "New", new_tag_path, class: "btn btn-success" %>
+
 </div>

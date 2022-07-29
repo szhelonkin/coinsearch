@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
   def list
-    @tag_types = TagType.all
+    @tags = Tag.all
   end
 
   def new
