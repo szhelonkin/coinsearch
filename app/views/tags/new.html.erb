@@ -1,0 +1,19 @@
+<div class="container">
+<h2>New tag</h2>
+
+<%= form_tag :action => 'create' do %>
+
+<div class="input-group mb3">
+<span for="tag_name" class="input-group-text">Name</span>
+<%= text_field 'tag', 'name', class:"form-control" %>
+</div>
+<br>
+<div class="btn-group">
+<%= submit_tag "Create", class: "btn btn-success" %>
+<%= link_to 'Back', {:action => 'list'}, class:"btn btn-secondary" %>
+</div>
+
+<% end %>
+
+</div>
+
