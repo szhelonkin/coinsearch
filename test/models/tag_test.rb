@@ -7,12 +7,16 @@ class TagTest < ActiveSupport::TestCase
   end
 
   test "valid tag" do
-    tag = Tag.new(name: "Base")
+    tag_type = TagType.new(name: "Base")
+    tag_type.save
+    tag = Tag.new(name: "Base", tag_type_id: tag_type.id)
     assert tag.valid?
   end
 
   test "should save base tag" do
-    tag = Tag.new(name: "Base")
+    tag_type = TagType.new(name: "Base")
+    tag_type.save
+    tag = Tag.new(name: "Base", tag_type_id: tag_type.id)
     assert tag.save
   end
 

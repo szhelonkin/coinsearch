@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_28_152100) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_30_160249) do
   create_table "assets", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -27,6 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_152100) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tag_type_id"
   end
 
+  add_foreign_key "tags", "tag_types"
 end
