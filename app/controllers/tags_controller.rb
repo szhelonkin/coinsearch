@@ -8,7 +8,7 @@ class TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.new(params.require(:tag).permit(:name))
+    @tag = Tag.new(params.require(:tag).permit(:name, :tag_type_id))
 
     if @tag.save
       redirect_to :action => 'list'
@@ -27,7 +27,7 @@ class TagsController < ApplicationController
 
   def update
     @tag = Tag.find(params[:id])
-    if @tag.update(params.require(:tag).permit(:name))
+    if @tag.update(params.require(:tag).permit(:name, :tag_type_id))
        redirect_to :action => 'list'
     else
       render :action => 'edit'

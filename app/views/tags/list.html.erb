@@ -7,6 +7,7 @@
 <tr>
 <th>Id</ih>
 <th>Name</th>
+<th>Tag type</th>
 </tr>
 </thead>
 
@@ -15,6 +16,7 @@
 <tr>
 <td><%= link_to tag.id, {:action => 'edit', :id => tag.id} %></td>
 <td><%= tag.name %></td>
+<td><%= tag.tag_type_id %></td
 </tr>
 <% end %>
 </tbody>
