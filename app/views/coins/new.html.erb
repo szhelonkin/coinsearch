@@ -1,4 +1,18 @@
 <div class="container">
-<h2>New</h2>
+<h2>New project</h2>
+<%= form_tag :action => 'create' do %>
+
+<div class="input-group mb3">
+<span for="asset_name" class="input-group-text">Name</span>
+<%= text_field 'asset', 'name', class:"form-control" %>
+</div>
+<br>
+<div class="btn-group">
+<%= submit_tag "Create", class: "btn btn-success" %>
+<%= link_to 'Back', {:action => 'index'}, class:"btn btn-secondary" %>
+</div>
+
+<% end %>
+
 </div>
 

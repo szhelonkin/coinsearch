@@ -1,0 +1,16 @@
+<div class="container">
+<h2>Edit project</h2>
+
+<%= form_for @asset, :url =>{:action => "update", :id =>@asset} do |f| %>
+<div class="input-group mb-3">
+<span class="input-group-text">Name</span>
+<%= f.text_field 'name', class: "form-control" %>
+</div>
+<div class="btn-group">
+<%= f.submit "Save", class: "btn btn-success" %>
+<%= link_to 'Back', {:action => 'index'}, class: "btn btn-secondary" %>
+</div>
+<% end %>
+
+
+</div>

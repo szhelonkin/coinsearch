@@ -1,5 +1,25 @@
 <div class="container">
-<h2>Index</h2>
+<h2>Coins</h2>
+<table class="table table-striped">
+
+<thead>
+<tr>
+<th>Id</ih>
+<th>Name</th>
+</tr>
+</thead>
+
+<tbody>
+<% @assets.each do |asset| %>
+<tr>
+<td><%= link_to asset.id, {:action => 'edit', :id => asset.id} %></td>
+<td><%= asset.name %></td>
+</tr>
+<% end %>
+</tbody>
+
+</table>
+
 <%= link_to "New project", new_coin_path, class: "btn btn-success" %>
 </div>
 
