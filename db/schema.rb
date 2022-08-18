@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_18_084014) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_18_090049) do
   create_table "asset_tags", force: :cascade do |t|
     t.text "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tag_id"
   end
 
   create_table "assets", force: :cascade do |t|
@@ -36,5 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_084014) do
     t.integer "tag_type_id"
   end
 
+  add_foreign_key "asset_tags", "tags"
   add_foreign_key "tags", "tag_types"
 end
