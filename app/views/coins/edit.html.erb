@@ -6,6 +6,31 @@
 <span class="input-group-text">Name</span>
 <%= f.text_field 'name', class: "form-control" %>
 </div>
+
+<h3>Tags</h3>
+<table class="table table-striped">
+
+<thead>
+<tr>
+<th>Id</ih>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<% if @asset.asset_tag %>
+<% @asset.asset_tag.each do |asset_tag| %>
+<tr>
+<td><%= link_to asset_tag.id, {:action => 'edit', :id => asset_tag.id} %></td>
+<td><%= asset_tag.desc %></td>
+</tr>
+<% end %>
+<% end %>
+</tbody>
+
+</table>
+
+
 <div class="btn-group">
 <%= f.submit "Save", class: "btn btn-success" %>
 <%= link_to 'Back', {:action => 'index'}, class: "btn btn-secondary" %>
