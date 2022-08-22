@@ -10,7 +10,7 @@ class AssetTest < ActiveSupport::TestCase
     asset_tag = AssetTag.new()
     asset_tag.save
 
-    asset = Asset.new(name: "Bitcoin")
+    asset = Asset.new(name: "Bitcoin", asset_tag_id: asset_tag.id)
     asset.save
     assert asset.valid?
   end
