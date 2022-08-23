@@ -18,8 +18,8 @@
 </thead>
 
 <tbody>
-<% if @asset.asset_tag %>
-<% @asset.asset_tag.each do |asset_tag| %>
+<% if @asset.asset_tags %>
+<% @asset.asset_tags.each do |asset_tag| %>
 <tr>
 <td><%= link_to asset_tag.id, {:action => 'edit', :id => asset_tag.id} %></td>
 <td><%= asset_tag.desc %></td>
