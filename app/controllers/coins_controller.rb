@@ -13,6 +13,7 @@ class CoinsController < ApplicationController
 
   def edit
     @asset = Asset.find(params[:id])
+    @tags = Tag.all
   end
 
   def update
@@ -32,6 +33,12 @@ class CoinsController < ApplicationController
     else
       render :action => 'new'
     end
+  end
+
+  def add_asset_tag
+    @asset = Asset.find(params[:id])
+
+    @asset_tag = AssetTag.New(params.require(:asset_tag).permit(:tag_id))
   end
 
 end

@@ -30,6 +30,19 @@
 
 </table>
 
+<p/>
+
+<div class="input-group mb-3">
+<input class="form-select" list="tags" name="tag" id="tag">
+<datalist id="tags">
+<% @tags.each do |tag| %>
+  <option value="<%= tag.name %>">
+<% end %>
+</datalist>
+<button class="btn btn-success" type="submit">Add</button>
+</div>
+
+<p/>
 
 <div class="btn-group">
 <%= f.submit "Save", class: "btn btn-success" %>

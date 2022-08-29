@@ -9,6 +9,7 @@ class AssetTagTest < ActiveSupport::TestCase
     tag_type = TagType.new(name: "Base")
     tag_type.save
     tag = Tag.new(name: "Base", tag_type_id: tag_type.id)
+    tag.save
 
     asset = Asset.new(name: "Bitcoin")
     asset.save
@@ -18,7 +19,7 @@ class AssetTagTest < ActiveSupport::TestCase
 
     #puts asset_tag.tag_id
 
-    #assert asset_tag.valid?
+    assert asset_tag.valid?
   end
 
 end
