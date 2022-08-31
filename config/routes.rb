@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :tag_types
   resources :tags
-  resources :coins
+  resources :coins do
+    collection do
+      post :add_asset_tag
+    end
+  end
 end

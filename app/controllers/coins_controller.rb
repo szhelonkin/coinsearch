@@ -36,9 +36,12 @@ class CoinsController < ApplicationController
   end
 
   def add_asset_tag
+    puts "add asset tag controller"
+    puts params
     @asset = Asset.find(params[:id])
 
     @asset_tag = AssetTag.New(params.require(:asset_tag).permit(:tag_id))
+    render :action => 'edit'
   end
 
 end

@@ -39,7 +39,7 @@
   <option value="<%= tag.name %>">
 <% end %>
 </datalist>
-<button class="btn btn-success" type="submit">Add</button>
+<%= link_to 'Add', {:action => 'add_asset_tag'}, class: "btn btn-success" %>
 </div>
 
 <p/>
