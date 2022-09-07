@@ -21,6 +21,7 @@ class CoinsController < ApplicationController
     if @asset.update(params.require(:asset).permit(:name))
        redirect_to :action => 'index'
     else
+      @tags = Tag.all
       render :action => 'edit'
     end
   end
@@ -39,8 +40,9 @@ class CoinsController < ApplicationController
     puts "add asset tag controller"
     puts params
     @asset = Asset.find(params[:id])
+    @tags = Tag.all
 
-    @asset_tag = AssetTag.New(params.require(:asset_tag).permit(:tag_id))
+    #@asset_tag = AssetTag.New(params.require(:asset_tag).permit(:tag_id))
     render :action => 'edit'
   end
 
