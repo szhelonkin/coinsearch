@@ -1,0 +1,2 @@
+module AssetTagsHelper
+end
