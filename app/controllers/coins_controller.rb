@@ -43,7 +43,8 @@ class CoinsController < ApplicationController
     @tags = Tag.all
 
     #@asset_tag = AssetTag.New(params.require(:asset_tag).permit(:tag_id))
-    render :action => 'edit'
+    #render :action => 'edit'
+    render "asset_tags/new"
   end
 
 end
