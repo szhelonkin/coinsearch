@@ -1,3 +1,11 @@
 <div class="container">
 <h2>New asset tags</h2>
+<%= form_for @asset, :url =>{:action => "update", :id =>@asset} do |f| %>
+<%= f.text_field 'asset_tag_id', class: "form-select", list: "tags" %>
+<datalist id="tags">
+<% @tags.each do |tag| %>
+  <option value="<%= tag.name %>">
+<% end %>
+<% end %>
+</datalist>
 

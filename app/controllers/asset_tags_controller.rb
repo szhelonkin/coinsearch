@@ -1,6 +1,7 @@
 class AssetTagsController < ApplicationController
   def new
     @asset_tag = AssetTag.new
+    @tags = Tag.all
   end
 
   def create
