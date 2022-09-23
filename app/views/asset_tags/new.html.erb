@@ -1,11 +1,17 @@
 <div class="container">
 <h2>New asset tags</h2>
-<%= form_for @asset, :url =>{:action => "update", :id =>@asset} do |f| %>
-<%= f.text_field 'asset_tag_id', class: "form-select", list: "tags" %>
+<%= form_for @asset_tag, :url =>{:action => "create", :id =>@asset_tag} do |f| %>
+<%= f.text_field 'id', class: "form-select", list: "tags" %>
 <datalist id="tags">
 <% @tags.each do |tag| %>
   <option value="<%= tag.name %>">
 <% end %>
-<% end %>
 </datalist>
+<div class="btn-group">
+<%= f.submit "Save", class: "btn btn-success" %>
+<%= link_to 'Back', {:action => 'index'}, class: "btn btn-secondary" %>
+</div>
+
+<% end %>
+
 
